@@ -17,7 +17,7 @@ class Student(models.Model):
     last_name = models.CharField(max_length=30, blank=False, default='')
     middle_name = models.CharField(max_length=30, blank=False, default='')
     birth_day = models.DateField(blank=True, default='')
-    stud_number = models.IntegerField(blank=False)
+    stud_number = models.CharField(max_length=10)
     group = models.ForeignKey(Group, on_delete=models.CASCADE, default='')
     is_captain = models.BooleanField(blank=False)
 
