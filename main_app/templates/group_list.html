@@ -1,0 +1,24 @@
+{% extends 'basic.html' %}
+{% block title %}<title>Группы</title>{% endblock %}
+{% block  content %}
+<div class="row justify-content-around">
+    <div class="col-5">
+        <table class="table table-hover table-borderless">
+          <thead>
+            <tr>
+              <th scope="col">Группа</th>
+              <th scope="col">Староста</th>
+            </tr>
+          </thead>
+          <tbody>
+          {% for o in object_list %}
+            <tr>
+              <th scope="row"><a href="/group/{{ o.group }}">{{ o.group }}</a></th>
+              <td>{{ o.last_name }} {{o.first_name}} {{ o.middle_name }}</td>
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

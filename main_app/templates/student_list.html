@@ -1,0 +1,37 @@
+{% extends 'basic.html' %}
+{% block title %}<title>Студенты группы {{ group }}</title>{% endblock %}
+{% block content %}
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div class="row justify-content-around">
+    <div class="col-8">
+    <b>Студентов: {{ object_list.count }} </b> <br>
+        <table class="table table-hover table-borderless table-sm">
+          <thead>
+            <tr>
+              <th scope="col">id</th>
+              <th scope="col">Номер билета</th>
+              <th scope="col">ФИО</th>
+              <th scope="col">День рождения</th>
+              <th scope="col">Староста</th>
+            </tr>
+          </thead>
+          <tbody>
+          {% for o in object_list %}
+            <tr>
+              <th scope="row">{{ o.id }}</th>
+              <td>{{ o.stud_number }}</td>
+              <td>{{ o.last_name }} {{o.first_name}} {{ o.middle_name }}</td>
+              <td>{{ o.birth_day }}</td>
+              {% if o.is_captain %}
+                <td><b>Да</b></td>
+              {% else %}
+                <td>Нет</td>
+              {% endif %}
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+    </div>
+</div>
+<br><br><br><br>
+{% endblock %}

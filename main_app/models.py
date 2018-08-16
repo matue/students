@@ -13,8 +13,8 @@ class Group(models.Model):
 
 
 class Student(models.Model):
-    first_name = models.CharField(max_length=30, blank=False, default='')
     last_name = models.CharField(max_length=30, blank=False, default='')
+    first_name = models.CharField(max_length=30, blank=False, default='')
     middle_name = models.CharField(max_length=30, blank=False, default='')
     birth_day = models.DateField(blank=True, default='')
     stud_number = models.CharField(max_length=10)
@@ -27,7 +27,6 @@ class Student(models.Model):
     class Meta:
         verbose_name = 'Студент'
         verbose_name_plural = 'Студенты'
-
 
 
 
